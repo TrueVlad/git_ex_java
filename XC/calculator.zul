@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul" xmlns:n="native">
+    <window apply="com.pkfk.xcollect.composers.CalculatorComposer" width="666px">
+        <errorboard id="errorsBoard" />
+        <tabbox id="calculateTabbox">
+            <tabs>
+                <tab id="installmentCalculateTab" label="Рассрочка"/>
+                <tab id="discontCalculateTab" label="Дисконты"/>                                          				                                    				
+            </tabs>
+            <tabpanels vflex="true">
+                <tabpanel id="installmentCalculateTabpanel" sclass="colored-tab" >
+                    <grid id="parameters" style="margin-bottom: 5px;">
+                        <columns>
+                            <column hflex="1"/>
+                            <column hflex="1"/>
+                        </columns>
+                        <rows>
+                            <row>
+                                <label>Тип рассрочки</label>
+                                <combobox id="typeComboBox" value="Стандартная" >
+                                    <comboitem label="Стандартная" value="Стандартная"/>
+                                    <comboitem label="Индивидуальная" value="Индивидуальная"/>
+                                </combobox>
+                            </row>
+                            <row>
+                                <label>Срок</label>
+                                <textbox id="paymentTermTextBox" readonly="true"></textbox>
+                            </row>
+                            <row>
+                                <label>Сумма платежа</label>
+                                <decimalbox id="paymentAmountDecimalBox" format="#,##0.00" width="43%"></decimalbox>
+                            </row>
+                            <row>
+                                <label>День платежа</label>
+                                <intbox id="paymentDateIntBox" width="43%"></intbox>
+                            </row>
+                            <row>
+                                <label>Сумма последнего платежа</label>
+                                <decimalbox id="paidLastAmountTextBox" readonly="true" format="#,##0.00" width="43%"></decimalbox>
+                            </row>
+                            <row>
+                                <label>Дата последнего платежа</label>
+                                <textbox id="paidLastDateTextBox" readonly="true"></textbox>
+                            </row>
+                        </rows>
+                    </grid>     
+                    <button id="saveInstallmentButton" label="Сохранить" disabled="true"/>
+                    <button id="resetInstallmentButton" label="Сброс"/>
+                </tabpanel> 
+                <tabpanel id="discontCalculateTabpanel" sclass="colored-tab" >														
+                    <button id="saveDiscontButton" label="Сохранить" disabled="true"/>
+                    <button id="resetDiscontButton" label="Сброс" disabled="true"/>                    
+                </tabpanel>                 
+            </tabpanels>
+        </tabbox>   
+    </window>
+</zk>

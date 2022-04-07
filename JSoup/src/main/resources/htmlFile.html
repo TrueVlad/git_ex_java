@@ -1,0 +1,1160 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="keywords" content="Учебник по JSoup на Java, Русские Блоги" />
+<meta name="description" content="Учебник по JSoup на Java, Русские Блоги, лучший сайт для обмена техническими статьями программиста." />
+<title>Учебник по JSoup на Java - Русские Блоги</title>
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/superfish.css">
+<link rel="stylesheet" href="/css/stylesheet.css">
+<link href='/css/fonts.css' rel='stylesheet' type='text/css' />
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/css/ie-fixes.css">
+<![endif]-->
+<link rel="stylesheet" href="/css/markdown.css">
+<link rel="stylesheet" href="/css/viewer.min.css">
+
+<script type="text/javascript" async="true">
+(function() {
+    var host = 'www.themoneytizer.com';
+    var element = document.createElement('script');
+    var firstScript = document.getElementsByTagName('script')[0];
+    var url = 'https://quantcast.mgr.consensu.org'
+        .concat('/choice/', '6Fv0cGNfc_bw8', '/', host, '/choice.js')
+    var uspTries = 0;
+    var uspTriesLimit = 3;
+    element.async = true;
+    element.type = 'text/javascript';
+    element.src = url;
+
+    firstScript.parentNode.insertBefore(element, firstScript);
+
+    function makeStub() {
+        var TCF_LOCATOR_NAME = '__tcfapiLocator';
+        var queue = [];
+        var win = window;
+        var cmpFrame;
+
+        function addFrame() {
+            var doc = win.document;
+            var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+            if (!otherCMP) {
+                if (doc.body) {
+                    var iframe = doc.createElement('iframe');
+
+                    iframe.style.cssText = 'display:none';
+                    iframe.name = TCF_LOCATOR_NAME;
+                    doc.body.appendChild(iframe);
+                } else {
+                    setTimeout(addFrame, 5);
+                }
+            }
+            return !otherCMP;
+        }
+
+        function tcfAPIHandler() {
+            var gdprApplies;
+            var args = arguments;
+
+            if (!args.length) {
+                return queue;
+            } else if (args[0] === 'setGdprApplies') {
+                if (
+                    args.length > 3 &&
+                    args[2] === 2 &&
+                    typeof args[3] === 'boolean'
+                ) {
+                    gdprApplies = args[3];
+                    if (typeof args[2] === 'function') {
+                        args[2]('set', true);
+                    }
+                }
+            } else if (args[0] === 'ping') {
+                var retr = {
+                    gdprApplies: gdprApplies,
+                    cmpLoaded: false,
+                    cmpStatus: 'stub'
+                };
+
+                if (typeof args[2] === 'function') {
+                    args[2](retr);
+                }
+            } else {
+                queue.push(args);
+            }
+        }
+
+        function postMessageEventHandler(event) {
+            var msgIsString = typeof event.data === 'string';
+            var json = {};
+
+            try {
+                if (msgIsString) {
+                    json = JSON.parse(event.data);
+                } else {
+                    json = event.data;
+                }
+            } catch (ignore) {}
+
+            var payload = json.__tcfapiCall;
+
+            if (payload) {
+                window.__tcfapi(
+                    payload.command,
+                    payload.version,
+                    function(retValue, success) {
+                        var returnMsg = {
+                            __tcfapiReturn: {
+                                returnValue: retValue,
+                                success: success,
+                                callId: payload.callId
+                            }
+                        };
+                        if (msgIsString) {
+                            returnMsg = JSON.stringify(returnMsg);
+                        }
+                        event.source.postMessage(returnMsg, '*');
+                    },
+                    payload.parameter
+                );
+            }
+        }
+
+        while (win) {
+            try {
+                if (win.frames[TCF_LOCATOR_NAME]) {
+                    cmpFrame = win;
+                    break;
+                }
+            } catch (ignore) {}
+
+            if (win === window.top) {
+                break;
+            }
+            win = win.parent;
+        }
+        if (!cmpFrame) {
+            addFrame();
+            win.__tcfapi = tcfAPIHandler;
+            win.addEventListener('message', postMessageEventHandler, false);
+        }
+    };
+
+    if (typeof module !== 'undefined') {
+        module.exports = makeStub;
+    } else {
+        makeStub();
+    }
+
+    var uspStubFunction = function() {
+        var arg = arguments;
+        if (typeof window.__uspapi !== uspStubFunction) {
+            setTimeout(function() {
+                if (typeof window.__uspapi !== 'undefined') {
+                    window.__uspapi.apply(window.__uspapi, arg);
+                }
+            }, 500);
+        }
+    };
+
+    var checkIfUspIsReady = function() {
+        uspTries++;
+        if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+            console.warn('USP is not accessible');
+        } else {
+            clearInterval(uspInterval);
+        }
+    };
+
+    if (typeof window.__uspapi === 'undefined') {
+        window.__uspapi = uspStubFunction;
+        var uspInterval = setInterval(checkIfUspIsReady, 6000);
+    }
+})();
+</script>
+
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PC2RG39');</script>
+
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<script>
+   window.googletag = window.googletag || {cmd: []};
+         googletag.cmd.push(function() {
+           var interstitialSlot = googletag.defineOutOfPageSlot('/147246189,22396446015/russianblogs.com_interstitial', googletag.enums.OutOfPageFormat.INTERSTITIAL);
+           if (interstitialSlot) interstitialSlot.addService(googletag.pubads());
+           googletag.pubads().enableSingleRequest();
+           googletag.enableServices();
+           googletag.display(interstitialSlot);
+       });
+</script>
+</head>
+<body>
+<div class="row outterWrapper">
+<div class="columns large-12">
+<div class="row header-row">
+<div class="columns header-inner large-12" style="padding:0px;padding-left:39px;"><h1 style="font-size:40px;font-weight: bold;margin-bottom:8px;margin-top:8px;"><a href="https://russianblogs.com">Русские Блоги</a><span id="short-desc" style="font-size:12px;font-weight: normal;">&nbsp;</span></h1></div>
+</div>
+<div class="row menu-row">
+<div class="columns top-menu large-12 top-nav">
+<nav>
+<section>
+<ul class="sf-menu">
+<li class="active"><a href="https://russianblogs.com">Главная</a></li>
+<li><a href="/cdn-cgi/l/email-protection#91e3e4e2e2f8f0fff3fdfef6e2d1f6fce9bff2fefc">Свяжитесь с нами</a></li>
+</ul>
+</section>
+</nav>
+</div>
+</div>
+<div class="row small-top-menu">
+<div class="columns large-12 plr0 top-nav">
+<form name="dropdown" action="#">
+<nav>
+<section>
+<ul class="sf-menu">
+<li class="active"><a href="https://russianblogs.com">Главная</a></li>
+<li><a href="/cdn-cgi/l/email-protection#a5d7d0d6d6ccc4cbc7c9cac2d6e5c2c8dd8bc6cac8">Свяжитесь с нами</a></li>
+</ul>
+</section>
+</nav>
+</form>
+</div>
+</div>
+</div>
+<div class="columns large-12 content-row">
+<div class="row title">
+<div class="columns large-12 content-title-inner">
+<div class="row">
+<div class="columns large-12">
+<form id="searchForm" action="/search" method="post" onsubmit="return validate();" style="margin:0;float:right;">
+<div>
+<input type="text" name="s" id="s" style="font-size:16px;width:200px;display: inline-block;padding:0;margin:0" /> <input type="submit" value="Поиск" style="color:black;display: inline-block;height:32px;font-size:16px;" />
+</div>
+</form>
+<div style="clear:both;"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="topads" style="text-align:center;margin-top:10px;width:100%;height:250px;" class="adsloading">
+<div style="text-align:center;" id="82332-31"><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="//ads.themoneytizer.com/s/gen.js?type=31"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=31"></script></div>
+</div>
+<div id="topads1" style="text-align:center;margin-top:10px;">
+<iframe data-id="russianblogs.com_980x300_responsive_1_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='970x250|300x250',
+            adunit = 'russianblogs.com_980x300_responsive_1_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div class="row content about">
+<div class="columns large-12 content-inner">
+<div class="row">
+<div class="columns large-7">
+<h2 style="line-height: 32px;">
+<span>Учебник по JSoup на Java</span>
+</h2>
+<p style="margin-bottom:5px;">Теги: &nbsp;<a href='/tag/jsoup/' title='jsoup'>jsoup</a>&nbsp;&nbsp;<a href='/tag/java/' title='java'>java</a>&nbsp;&nbsp;<a href='/tag/%D0%A1%D1%82%D0%BE%D1%80%D0%BE%D0%BD%D0%BD%D0%B8%D0%B5+%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B8/' title='Сторонние библиотеки'>Сторонние библиотеки</a></p><div style="clear:both;"></div>
+<div id="contentaboveads" style="width:100%;text-align:center;padding-top:10px;">
+<iframe data-id="russianblogs.com_750x200_responsive_2_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='750x200|300x250',
+            adunit = 'russianblogs.com_750x200_responsive_2_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div style="padding:5px 5px 5px 5px;word-wrap: break-word; word-break: normal;max-width: 950px;font-size:14px;" id="article_content">
+<div id="content_views" class="markdown_views prism-atom-one-dark">
+<p>title: Учебник по Jsoup для Java crawler<br /> date: 2018-12-24 8:00:00 +0800<br /> update: 2018-12-24 8:00:00 +0800<br /> author: me<br /> cover: <a href="https://img-blog.csdnimg.cn/20181224144920712" rel="nofollow,noindex" target="_blank">https://img-blog.csdnimg.cn/20181224144920712</a><br /> tags:</p>
+<ul>
+<li>Сторонние библиотеки<br /> Предварительный просмотр : JSoup - это библиотека Java для обработки HTML, предоставляющая очень удобный API, аналогичный методу, использующему DOM, CSS и jquery для извлечения и обработки данных.</li>
+</ul>
+<hr />
+<p></p>
+<div class="toc">
+<h3>Справочник статей</h3>
+<ul>
+<li><a href="#JavaJSoup_15" rel="nofollow,noindex" target="_blank">Учебник по JSoup на Java</a></li>
+<ul>
+<li><a href="#_17" rel="nofollow,noindex" target="_blank">Код загрузки адрес</a></li>
+<li><a href="#_23" rel="nofollow,noindex" target="_blank">Введение</a></li>
+<li><a href="#_49" rel="nofollow,noindex" target="_blank">Основной класс</a></li>
+<ul>
+<li><a href="#1_orgjsoupJsoup_51" rel="nofollow,noindex" target="_blank">1. org.jsoup.Jsoup class</a></li>
+<li><a href="#2_orgjsoupnodesDocument_64" rel="nofollow,noindex" target="_blank">2. org.jsoup.nodes.Document class</a></li>
+<li><a href="#3_orgjsoupnodesElement_70" rel="nofollow,noindex" target="_blank">3. org.jsoup.nodes.Element class</a></li>
+</ul>
+<li><a href="#_76" rel="nofollow,noindex" target="_blank">Прост в использовании</a></li>
+<ul>
+<li><a href="#_78" rel="nofollow,noindex" target="_blank">установка</a></li>
+<li><a href="#_91" rel="nofollow,noindex" target="_blank">Загрузить документ</a></li>
+<ul>
+<li><a href="#1_URL_93" rel="nofollow,noindex" target="_blank">1. URL загрузка документа</a></li>
+<li><a href="#2__109" rel="nofollow,noindex" target="_blank">2. Загрузить документ из файла</a></li>
+<li><a href="#3_String_125" rel="nofollow,noindex" target="_blank">3. Загрузить документы из строки</a></li>
+</ul>
+<li><a href="#_143" rel="nofollow,noindex" target="_blank">Извлечь данные</a></li>
+<ul>
+<li><a href="#DOM_145" rel="nofollow,noindex" target="_blank">Используйте метод DOM для навигации по документу</a></li>
+<ul>
+<li><a href="#_149" rel="nofollow,noindex" target="_blank">Найти элементы</a></li>
+<li><a href="#_158" rel="nofollow,noindex" target="_blank">Обработка данных элемента</a></li>
+<li><a href="#HTML_169" rel="nofollow,noindex" target="_blank">Манипулировать HTML и текстом</a></li>
+</ul>
+</ul>
+<li><a href="#selectorsyntax_176" rel="nofollow,noindex" target="_blank">Найти элементы, используя синтаксис селектора</a></li>
+<ul>
+<li><a href="#CSSjquery_178" rel="nofollow,noindex" target="_blank">Используйте CSS или jquery-подобный синтаксис селектора для поиска или управления элементами.</a></li>
+</ul>
+<li><a href="#HTML_188" rel="nofollow,noindex" target="_blank">Извлечение атрибутов, текста и HTML из элементов</a></li>
+<li><a href="#URLHTMLURL_196" rel="nofollow,noindex" target="_blank">У вас есть HTML-документ, содержащий относительный URL, вам нужно разобрать его по абсолютному URL</a></li>
+</ul>
+<li><a href="#_206" rel="nofollow,noindex" target="_blank">Пример программы: список ссылок</a></li>
+<li><a href="#sitemapxml_305" rel="nofollow,noindex" target="_blank">Просканируйте личные ссылки в блоге и сгенерируйте sitemap.xml</a></li>
+<ul>
+<li><a href="#_307" rel="nofollow,noindex" target="_blank">шаг</a></li>
+<li><a href="#_315" rel="nofollow,noindex" target="_blank">Основной код</a></li>
+<ul>
+<li><a href="#mainjava_317" rel="nofollow,noindex" target="_blank">Начальный класс main.java</a></li>
+<li><a href="#linkjava__333" rel="nofollow,noindex" target="_blank">link.java реализует ссылки для сканирования</a></li>
+<li><a href="#siteMapXMLjava_sitemap_442" rel="nofollow,noindex" target="_blank">Реализация siteMapXML.java создает карту сайта</a></li>
+</ul>
+</ul>
+<li><a href="#_514" rel="nofollow,noindex" target="_blank">Справочная статья</a></li>
+</ul>
+</ul>
+</div>
+<br />
+<img src="/images/906/69843fac48b70fe442d47ae08b9137b2.JPEG" alt=" " />
+<p></p>
+<h1><a id="JavaJSoup_15" target="_blank" rel="nofollow,noindex"></a>Учебник по JSoup на Java</h1>
+<h2><a id="_17" target="_blank" rel="nofollow,noindex"></a>Код загрузки адрес</h2>
+<blockquote>
+<p><a href="https://github.com/suveng/demo/releases/tag/jsoupDemo" rel="nofollow,noindex" target="_blank">https://github.com/suveng/demo/releases/tag/jsoupDemo</a></p>
+<p>Получить ссылки на githubpages в реальном бою и создать карту сайта</p>
+</blockquote>
+<h2><a id="_23" target="_blank" rel="nofollow,noindex"></a>Введение</h2>
+<p>JSoup - это библиотека Java для обработки HTML, она предоставляет очень удобный API, аналогичный методу, использующему DOM, CSS и jquery для извлечения и манипулирования данными.</p>
+<p>jsoup реализует спецификацию WHATWG HTML5 и анализирует HTML в том же DOM, что и современные браузеры.</p>
+<ul>
+<li>Извлекайте и анализируйте HTML из URL, файлов или строк.</li>
+<li>Чтобы найти и извлечь данные, используйте обход DOM или селекторы CSS.</li>
+<li>Управляйте HTML-элементами, атрибутами и текстом.</li>
+<li>Очистите пользовательский контент на основе безопасного белого списка, чтобы предотвратить атаки XSS.</li>
+<li>Вывести аккуратный HTML.</li>
+</ul>
+<p>jsoup предназначен для обработки HTML, который находит различия во всех форматах: от оригинальных и проверенных до недействительных тегов; jsoup создаст разумное дерево разбора.</p>
+<p><a href="https://github.com/jhy/jsoup/" rel="nofollow,noindex" target="_blank">адрес проекта</a></p>
+<p><strong>Чего можно достичь с помощью Jsoup?</strong></p>
+<ul>
+<li>Очистить и разобрать HTML из URL, файла или строки</li>
+<li>Найти и извлечь данные, используя обход DOM или селекторы CSS</li>
+<li>Манипулировать HTML-элементами, атрибутами и текстом</li>
+<li>Очистите отправленный пользователем контент на основе безопасного белого списка, чтобы предотвратить атаки XSS</li>
+<li>Вывести аккуратный HTML</li>
+</ul>
+<p><a href="https://jsoup.org/cookbook/" rel="nofollow,noindex" target="_blank">Адрес документа</a></p>
+<h2><a id="_49" target="_blank" rel="nofollow,noindex"></a>Основной класс</h2>
+<h3><a id="1_orgjsoupJsoup_51" target="_blank" rel="nofollow,noindex"></a>1. org.jsoup.Jsoup class</h3>
+<p>Класс Jsoup является точкой входа любой программы Jsoup и будет предоставлять методы для загрузки и анализа HTML-документов из различных источников.</p>
+<p>Вот некоторые важные методы класса Jsoup:</p>
+<table>
+<thead>
+<tr>
+<th>метод</th>
+<th>описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>static Connection connect(String url)</code></td>
+<td>Создать и вернуть URL-соединение.</td>
+</tr>
+<tr>
+<td><code>static Document parse(File in, String charsetName)</code></td>
+<td>Разобрать указанный файл набора символов в документ.</td>
+</tr>
+<tr>
+<td><code>static Document parse(String html)</code></td>
+<td>Разобрать данный HTML-код в документе.</td>
+</tr>
+<tr>
+<td><code>static String clean(String bodyHtml, Whitelist whitelist)</code></td>
+<td>Вернуть безопасный HTML из входного HTML, проанализировать входной HTML и отфильтровать белый список разрешенных тегов и атрибутов.</td>
+</tr>
+</tbody>
+</table>
+<h3><a id="2_orgjsoupnodesDocument_64" target="_blank" rel="nofollow,noindex"></a>2. org.jsoup.nodes.Document class</h3>
+<p>Этот класс представляет загрузку документов HTML через библиотеку Jsoup. Вы можете использовать этот класс для выполнения операций, которые применяются ко всему документу HTML.</p>
+<p>Важные методы класса Element можно найти на<a href="http://jsoup.org/apidocs/org/jsoup/nodes/Document.html" rel="nofollow,noindex" target="_blank">http://jsoup.org/apidocs/org/jsoup/nodes/Document.html</a> 。</p>
+<h3><a id="3_orgjsoupnodesElement_70" target="_blank" rel="nofollow,noindex"></a>3. org.jsoup.nodes.Element class</h3>
+<p>Элементы HTML состоят из имен тегов, атрибутов и дочерних узлов. Используя класс Element, вы можете извлекать данные, проходить узлы и манипулировать HTML.</p>
+<p>Важные методы класса Element можно найти на<a href="http://jsoup.org/apidocs/org/jsoup/nodes/Element.html" rel="nofollow,noindex" target="_blank">http://jsoup.org/apidocs/org/jsoup/nodes/Element.html</a> 。</p>
+<h2><a id="_76" target="_blank" rel="nofollow,noindex"></a>Прост в использовании</h2>
+<h3><a id="_78" target="_blank" rel="nofollow,noindex"></a>установка</h3>
+<blockquote>
+<p>Используйте Maven Guide Package, вы также можете использовать банку</p>
+</blockquote>
+<pre><code class="prism language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- jsoup HTML parser library @ http://jsoup.org/ --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">&gt;</span></span>org.jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">&gt;</span></span>jsoup<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">&gt;</span></span>1.10.2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">&gt;</span></span>
+</code></pre>
+<h3><a id="_91" target="_blank" rel="nofollow,noindex"></a>Загрузить документ</h3>
+<h4><a id="1_URL_93" target="_blank" rel="nofollow,noindex"></a>1. URL загрузка документа</h4>
+<p>Загрузите документ с URL, используйте<code>Jsoup.connect()</code>Способ загрузки HTML из URL.</p>
+<pre><code class="prism language-java"><span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+    Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span><span class="token string">&quot;http://www.yiibai.com&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4><a id="2__109" target="_blank" rel="nofollow,noindex"></a>2. Загрузить документ из файла</h4>
+<p>использование<code>Jsoup.parse()</code>Способ загрузки HTML из файла.</p>
+<pre><code class="prism language-java"><span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+    Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span> <span class="token string">&quot;D:/temp/index.html&quot;</span> <span class="token punctuation">)</span> <span class="token punctuation">,</span> <span class="token string">&quot;utf-8&quot;</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4><a id="3_String_125" target="_blank" rel="nofollow,noindex"></a>3. Загрузить документы из строки</h4>
+<p>использование<code>Jsoup.parse()</code>Метод для загрузки HTML из строки.</p>
+<pre><code class="prism language-java"><span class="token keyword">try</span>
+<span class="token punctuation">{</span>
+    String html <span class="token operator">=</span> <span class="token string">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;First parse&lt;/title&gt;&lt;/head&gt;&quot;</span>
+                    <span class="token operator">+</span> <span class="token string">&quot;&lt;body&gt;&lt;p&gt;Parsed HTML into a doc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;&quot;</span><span class="token punctuation">;</span>
+    Document document <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">title</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> 
+<span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> 
+<span class="token punctuation">{</span>
+    e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3><a id="_143" target="_blank" rel="nofollow,noindex"></a>Извлечь данные</h3>
+<h4><a id="DOM_145" target="_blank" rel="nofollow,noindex"></a>Используйте метод DOM для навигации по документу</h4>
+<p>Элементы предоставляют ряд DOM-подобных методов для поиска элементов, извлечения и манипулирования их данными. Получатели DOM являются контекстными: они вызываются в родительском документе, находят соответствующий элемент в документе, они вызывают элемент дочернего элемента дочернего элемента. Таким образом, вы можете понять, какие данные вам нужны.</p>
+<h5><a id="_149" target="_blank" rel="nofollow,noindex"></a>Найти элементы</h5>
+<ul>
+<li><code>getElementById(String id)</code></li>
+<li><code>getElementsByTag(String tag)</code></li>
+<li><code>getElementsByClass(String className)</code></li>
+<li><code>getElementsByAttribute(String key)</code> (И связанные методы)</li>
+<li>Элементарные братья и сестры:<code>siblingElements()</code>，<code>firstElementSibling()</code>，<code>lastElementSibling()</code>，<code>nextElementSibling()</code>，<code>previousElementSibling()</code></li>
+<li>Рисунок:<code>parent()</code>，<code>children()</code>，<code>child(int index)</code></li>
+</ul>
+<h5><a id="_158" target="_blank" rel="nofollow,noindex"></a>Обработка данных элемента</h5>
+<ul>
+<li><code>attr(String key)</code>Получить и<code>attr(String key, String value)</code>Установить свойства</li>
+<li><code>attributes()</code> Получить все атрибуты</li>
+<li><code>id()</code>，<code>className()</code>с<code>classNames()</code></li>
+<li><code>text()</code>Получить и<code>text(String value)</code>Установить текстовое содержание</li>
+<li><code>html()</code>Получить и<code>html(String value)</code>Установить внутренний контент HTML</li>
+<li><code>outerHtml()</code> Получить внешнее значение HTML</li>
+<li><code>data()</code>Получить данные (например,<code>script</code>с<code>style</code>метка)</li>
+<li><code>tag()</code> с <code>tagName()</code></li>
+</ul>
+<h5><a id="HTML_169" target="_blank" rel="nofollow,noindex"></a>Манипулировать HTML и текстом</h5>
+<ul>
+<li><code>append(String html)</code>， <code>prepend(String html)</code></li>
+<li><code>appendText(String text)</code>， <code>prependText(String text)</code></li>
+<li><code>appendElement(String tagName)</code>， <code>prependElement(String tagName)</code></li>
+<li><code>html(String value)</code></li>
+</ul>
+<h3><a id="selectorsyntax_176" target="_blank" rel="nofollow,noindex"></a>Найти элементы, используя синтаксис селектора</h3>
+<h4><a id="CSSjquery_178" target="_blank" rel="nofollow,noindex"></a>Используйте CSS или jquery-подобный синтаксис селектора для поиска или управления элементами.</h4>
+<p>использование<code>Element.select(String selector)</code>с<code>Elements.select(String selector)</code>метод</p>
+<blockquote>
+<p>поддержка элементов jsoup<a href="https://www.w3.org/TR/2009/PR-css3-selectors-20091215/" rel="nofollow,noindex" target="_blank">CSS</a>(или<a href="https://jquery.com/" rel="nofollow,noindex" target="_blank">jquery</a>) И другой синтаксис селектора для поиска подходящих элементов, позволяющий выполнять очень мощные и надежные запросы.</p>
+<p><code>select</code>Метод доступен в одном<code>Document</code>，<code>Element</code>Или в<code>Elements</code>, Это контекстно, поэтому вы можете фильтровать, выбирая из определенных элементов или вызывая по ссылке выбора.</p>
+<p>Select возвращает список элементов (как<code>Elements</code>), Который предоставляет ряд методов для извлечения и манипулирования результатами.<a href="https://jsoup.org/cookbook/extracting-data/selector-syntax" rel="nofollow,noindex" target="_blank">Больше синтаксиса селектора</a></p>
+</blockquote>
+<h3><a id="HTML_188" target="_blank" rel="nofollow,noindex"></a>Извлечение атрибутов, текста и HTML из элементов</h3>
+<p>После анализа документа и поиска некоторых элементов вам необходимо получить данные в этих элементах.</p>
+<ul>
+<li><code>Element.id()</code></li>
+<li><code>Element.tagName()</code></li>
+<li><code>Element.className()</code> с <code>Element.hasClass(String className)</code></li>
+</ul>
+<h3><a id="URLHTMLURL_196" target="_blank" rel="nofollow,noindex"></a>У вас есть HTML-документ, содержащий относительный URL, вам нужно разобрать его по абсолютному URL</h3>
+<blockquote>
+<p>В элементах HTML URL-адрес обычно представляет собой IOn, записанный относительно местоположения документа:<code>&lt;a href=&quot;/download&quot;&gt;...&lt;/a&gt;</code>Когда вы используете<code>Node.attr(String key)</code>Когда метод получает атрибут href, он будет возвращен, как указано в исходном HTML.</p>
+<p>Если вы хотите получить абсолютный URL, там будет префикс ключа атрибута<code>abs:</code>, Префикс приведет к тому, что значение атрибута (исходная позиция) будет разрешено в соответствии с базовым URI документа):<code>attr(&quot;abs:href&quot;)</code></p>
+<p>Для этого варианта использования важно указать базовый URI при разборе документа.</p>
+<p>Если вы не хотите использовать<code>abs:</code>Префикс есть метод<code>Node.absUrl(String key)</code>Те же самые операции могут быть выполнены, но могут быть доступны через естественные ключи атрибута.</p>
+</blockquote>
+<h2><a id="_206" target="_blank" rel="nofollow,noindex"></a>Пример программы: список ссылок</h2>
+<pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ListLinks</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+        Validate<span class="token punctuation">.</span><span class="token function">isTrue</span><span class="token punctuation">(</span>args<span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&quot;usage: supply url to fetch&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String url <span class="token operator">=</span> args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;Fetching %s...&quot;</span><span class="token punctuation">,</span> url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        Document doc <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Elements links <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">&quot;a[href]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Elements media <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">&quot;[src]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Elements imports <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">&quot;link[href]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;\nMedia: (%d)&quot;</span><span class="token punctuation">,</span> media<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Element src <span class="token operator">:</span> media<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>src<span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">&quot;img&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+                <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot; * %s: &lt;%s&gt; %sx%s (%s)&quot;</span><span class="token punctuation">,</span>
+                        src<span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> src<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;abs:src&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> src<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;width&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> src<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;height&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                        <span class="token function">trim</span><span class="token punctuation">(</span>src<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;alt&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span>
+                <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot; * %s: &lt;%s&gt;&quot;</span><span class="token punctuation">,</span> src<span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> src<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;abs:src&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;\nImports: (%d)&quot;</span><span class="token punctuation">,</span> imports<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Element link <span class="token operator">:</span> imports<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot; * %s &lt;%s&gt; (%s)&quot;</span><span class="token punctuation">,</span> link<span class="token punctuation">.</span><span class="token function">tagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>link<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;abs:href&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> link<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;rel&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;\nLinks: (%d)&quot;</span><span class="token punctuation">,</span> links<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Element link <span class="token operator">:</span> links<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot; * a: &lt;%s&gt;  (%s)&quot;</span><span class="token punctuation">,</span> link<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;abs:href&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">trim</span><span class="token punctuation">(</span>link<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">35</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">print</span><span class="token punctuation">(</span>String msg<span class="token punctuation">,</span> Object<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>msg<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String <span class="token function">trim</span><span class="token punctuation">(</span>String s<span class="token punctuation">,</span> <span class="token keyword">int</span> width<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&gt;</span> width<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> width<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;.&quot;</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span>
+            <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>Образец вывода</p>
+</blockquote>
+<pre><code class="prism language-java">Media<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token number">38</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>y18<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> <span class="token number">18</span>x18 <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>s<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> <span class="token number">10</span>x1 <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>grayarrow<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> x <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>s<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> <span class="token number">0x10</span> <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> script<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>co2stats<span class="token punctuation">.</span>com<span class="token operator">/</span>propres<span class="token punctuation">.</span>php<span class="token operator">?</span>s<span class="token operator">=</span><span class="token number">1138</span><span class="token operator">&gt;</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>s<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> <span class="token number">15</span>x1 <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>hnsearch<span class="token punctuation">.</span>png<span class="token operator">&gt;</span> x <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>images<span class="token operator">/</span>s<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> <span class="token number">25</span>x1 <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> img<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mixpanel<span class="token punctuation">.</span>com<span class="token operator">/</span>site_media<span class="token operator">/</span>images<span class="token operator">/</span>mixpanel_partner_logo_borderless<span class="token punctuation">.</span>gif<span class="token operator">&gt;</span> x <span class="token punctuation">(</span>Analytics by Mixpan<span class="token punctuation">.</span><span class="token punctuation">)</span>
+ 
+Imports<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> link <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>news<span class="token punctuation">.</span>css<span class="token operator">&gt;</span> <span class="token punctuation">(</span>stylesheet<span class="token punctuation">)</span>
+ <span class="token operator">*</span> link <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>favicon<span class="token punctuation">.</span>ico<span class="token operator">&gt;</span> <span class="token punctuation">(</span>shortcut icon<span class="token punctuation">)</span>
+ 
+Links<span class="token operator">:</span> <span class="token punctuation">(</span><span class="token number">141</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>news<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Hacker News<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>newest<span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>newcomments<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>comments<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>leaders<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>leaders<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>jobs<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>jobs<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>submit<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>submit<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>x<span class="token operator">?</span>fnid<span class="token operator">=</span>JKhQjfU7gW<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>login<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>vote<span class="token operator">?</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token number">1094578</span><span class="token operator">&amp;</span>dir<span class="token operator">=</span>up<span class="token operator">&amp;</span>whence<span class="token operator">=</span><span class="token operator">%</span><span class="token number">6</span>e<span class="token operator">%</span><span class="token number">65</span><span class="token operator">%</span><span class="token number">77</span><span class="token operator">%</span><span class="token number">73</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>readwriteweb<span class="token punctuation">.</span>com<span class="token operator">/</span>archives<span class="token operator">/</span>facebook_gets_faster_debuts_homegrown_php_compiler<span class="token punctuation">.</span>php<span class="token operator">?</span>utm_source<span class="token operator">=</span>feedburner<span class="token operator">&amp;</span>utm_medium<span class="token operator">=</span>feed<span class="token operator">&amp;</span>utm_campaign<span class="token operator">=</span>Feed<span class="token operator">%</span><span class="token number">3</span>A<span class="token operator">+</span>readwriteweb<span class="token operator">+</span><span class="token operator">%</span><span class="token number">28</span>ReadWriteWeb<span class="token operator">%</span><span class="token number">29</span><span class="token operator">&amp;</span>utm_content<span class="token operator">=</span>Twitter<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Facebook speeds up PHP<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>user<span class="token operator">?</span>id<span class="token operator">=</span>mcxx<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>mcxx<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>item<span class="token operator">?</span>id<span class="token operator">=</span><span class="token number">1094578</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token number">9</span> comments<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>vote<span class="token operator">?</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token number">1094649</span><span class="token operator">&amp;</span>dir<span class="token operator">=</span>up<span class="token operator">&amp;</span>whence<span class="token operator">=</span><span class="token operator">%</span><span class="token number">6</span>e<span class="token operator">%</span><span class="token number">65</span><span class="token operator">%</span><span class="token number">77</span><span class="token operator">%</span><span class="token number">73</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>groups<span class="token punctuation">.</span>google<span class="token punctuation">.</span>com<span class="token operator">/</span>group<span class="token operator">/</span>django<span class="token operator">-</span>developers<span class="token operator">/</span>msg<span class="token operator">/</span>a65fbbc8effcd914<span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token string">&quot;Tough. Django produces XHTML.&quot;</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>user<span class="token operator">?</span>id<span class="token operator">=</span>andybak<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>andybak<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>item<span class="token operator">?</span>id<span class="token operator">=</span><span class="token number">1094649</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token number">3</span> comments<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>vote<span class="token operator">?</span><span class="token keyword">for</span><span class="token operator">=</span><span class="token number">1093927</span><span class="token operator">&amp;</span>dir<span class="token operator">=</span>up<span class="token operator">&amp;</span>whence<span class="token operator">=</span><span class="token operator">%</span><span class="token number">6</span>e<span class="token operator">%</span><span class="token number">65</span><span class="token operator">%</span><span class="token number">77</span><span class="token operator">%</span><span class="token number">73</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>x<span class="token operator">?</span>fnid<span class="token operator">=</span>p2sdPLE7Ce<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>More<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>lists<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Lists<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>rss<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>RSS<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>bookmarklet<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Bookmarklet<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>newsguidelines<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Guidelines<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>newsfaq<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>FAQ<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>newsnews<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>News News<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>news<span class="token punctuation">.</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>item<span class="token operator">?</span>id<span class="token operator">=</span><span class="token number">363</span><span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Feature Requests<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Y Combinator<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>w2010<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Apply<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>ycombinator<span class="token punctuation">.</span>com<span class="token operator">/</span>lib<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span>Library<span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>www<span class="token punctuation">.</span>webmynd<span class="token punctuation">.</span>com<span class="token operator">/</span>html<span class="token operator">/</span>hackernews<span class="token punctuation">.</span>html<span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+ <span class="token operator">*</span> a<span class="token operator">:</span> <span class="token operator">&lt;</span>http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>mixpanel<span class="token punctuation">.</span>com<span class="token operator">/</span><span class="token operator">?</span>from<span class="token operator">=</span>yc<span class="token operator">&gt;</span>  <span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2><a id="sitemapxml_305" target="_blank" rel="nofollow,noindex"></a>Просканируйте личные ссылки в блоге и сгенерируйте sitemap.xml</h2>
+<h3><a id="_307" target="_blank" rel="nofollow,noindex"></a>шаг</h3>
+<ul>
+<li>1 Определите ссылку для сканирования</li>
+<li>2 Получить все ссылки на текущей связанной странице</li>
+<li>3 Фильтр нелокальных доменных ссылок</li>
+<li>4 Сохраните текущую ссылку, определите, была ли сохранена текущая ссылка (установить коллекцию), если сохранена, пропустите, если не сохранена, перейдите к 1</li>
+<li>5 В соответствии с созданной ссылкой создайте XML-файл, соответствующий стандарту Google Sitemap.</li>
+</ul>
+<h3><a id="_315" target="_blank" rel="nofollow,noindex"></a>Основной код</h3>
+<h4><a id="mainjava_317" target="_blank" rel="nofollow,noindex"></a>Начальный класс main.java</h4>
+<pre><code class="prism language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Main</span> <span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+    Links links <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Links</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Получить ссылку и сохранить ее в links.log</span>
+    links<span class="token punctuation">.</span><span class="token function">myblog</span><span class="token punctuation">(</span>links<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    SiteMapXML siteMapXML <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SiteMapXML</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    siteMapXML<span class="token punctuation">.</span><span class="token function">createSiteMap</span><span class="token punctuation">(</span><span class="token string">&quot;links.log&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Удалить после генерации</span>
+    FileUtils<span class="token punctuation">.</span><span class="token function">deleteQuietly</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;links.log&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4><a id="linkjava__333" target="_blank" rel="nofollow,noindex"></a>link.java реализует ссылки для сканирования</h4>
+<pre><code class="prism language-java"><span class="token comment">/**
+   * @author       создан в 2018/12/22
+   * @Description: учебник по jsoup, фактическое соединение с боевым сканированием
+ */</span>
+<span class="token annotation punctuation">@Data</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Links</span> <span class="token punctuation">{</span>
+
+  <span class="token comment">/**
+       * Мое доменное имя
+   */</span>
+  <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String DOMAIN <span class="token operator">=</span> <span class="token string">&quot;https://suveng.github.io&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+       * Целевое доменное имя
+   */</span>
+  <span class="token keyword">private</span> String targetDomain <span class="token operator">=</span> <span class="token string">&quot;https://suveng.github.io&quot;</span><span class="token punctuation">;</span>
+  <span class="token comment">/**
+       * Сохраненные ссылки
+   */</span>
+  <span class="token keyword">private</span> Set<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">&gt;</span></span> saved <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HashSet</span><span class="token operator">&lt;</span><span class="token operator">&gt;</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment">/**
+       * Последняя ссылка
+   */</span>
+  String targetHref<span class="token punctuation">;</span>
+
+ <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">myblog</span><span class="token punctuation">(</span>Links jsoupMain<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+  Document doc <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>Links<span class="token punctuation">.</span>DOMAIN<span class="token operator">+</span><span class="token string">&quot;/blog&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  Elements links <span class="token operator">=</span> doc<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">&quot;a[href]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  jsoupMain<span class="token punctuation">.</span><span class="token function">saveLinksByElements</span><span class="token punctuation">(</span>links<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span>
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">saveLinksByElements</span><span class="token punctuation">(</span>Elements links<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>links <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>Element element <span class="token operator">:</span> links<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Обработка типа соединения</span>
+      <span class="token function">dealwithHref</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>saved<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>targetHref<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;\nlink : &quot;</span> <span class="token operator">+</span> targetHref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;text : &quot;</span> <span class="token operator">+</span> element<span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Elements targetLink <span class="token operator">=</span> <span class="token function">getLinks</span><span class="token punctuation">(</span>targetHref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>targetLink <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token keyword">return</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token function">saveLinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">saveLinksByElements</span><span class="token punctuation">(</span>targetLink<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+       * Обработка соединений
+   */</span>
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">dealwithHref</span><span class="token punctuation">(</span>Element element<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+
+    targetHref<span class="token operator">=</span>element<span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">&quot;abs:href&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment">// Процесс кодирования</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>targetHref <span class="token operator">=</span> URLDecoder<span class="token punctuation">.</span><span class="token function">decode</span><span class="token punctuation">(</span>targetHref<span class="token punctuation">,</span> <span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">UnsupportedEncodingException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&laquo;Неподдерживаемая кодировка, предлагаем перейти на UTF-8&raquo;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>targetHref <span class="token operator">=</span> null<span class="token punctuation">;</span>
+      <span class="token keyword">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">dealwithDomain</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+       * Определить, является ли это текущим доменным именем, только текущее доменное имя поддерживает сканирование, не поддерживает междоменный домен
+   */</span>
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">dealwithDomain</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span>targetHref<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>targetDomain<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>targetHref<span class="token operator">=</span>null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+       * Получить ссылку
+   * @param url targetHref
+   * @return  document.select(&quot;a[href]&quot;);
+   */</span>
+  <span class="token keyword">private</span> Elements <span class="token function">getLinks</span><span class="token punctuation">(</span>String url<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      Connection connect <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">connect</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Document document<span class="token punctuation">;</span>
+      document <span class="token operator">=</span> connect<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> document<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">&quot;a[href]&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Плохая ссылка&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">return</span> null<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+       * Сохранить ссылку
+       * @ Throws IOException чтение и запись файлов
+   */</span>
+  <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">saveLinks</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+    saved<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>targetHref<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    File links <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">&quot;links.log&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    FileUtils<span class="token punctuation">.</span><span class="token function">writeStringToFile</span><span class="token punctuation">(</span>links<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>targetHref <span class="token operator">+</span> <span class="token string">'\n'</span><span class="token punctuation">,</span> <span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4><a id="siteMapXMLjava_sitemap_442" target="_blank" rel="nofollow,noindex"></a>Реализация siteMapXML.java создает карту сайта</h4>
+<blockquote>
+<p>Предполагается, что с помощью библиотеки классов dom4j будет написана статья о dom4j.</p>
+</blockquote>
+<pre><code class="prism language-java"><span class="token comment">/**
+   * @author       создан в 2018/12/22
+   * @Description: класс инструмента создания карты сайта
+ */</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SiteMapXML</span> <span class="token punctuation">{</span>
+
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">createSiteMap</span><span class="token punctuation">(</span>String linksPath<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+    Document document <span class="token operator">=</span> DocumentHelper<span class="token punctuation">.</span><span class="token function">createDocument</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Element locs <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">addElement</span><span class="token punctuation">(</span><span class="token string">&quot;urlset&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    List<span class="token generics function"><span class="token punctuation">&lt;</span>String<span class="token punctuation">&gt;</span></span> strings <span class="token operator">=</span> FileUtils<span class="token punctuation">.</span><span class="token function">readLines</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>linksPath<span class="token punctuation">)</span><span class="token punctuation">,</span> Charset<span class="token punctuation">.</span><span class="token function">forName</span><span class="token punctuation">(</span><span class="token string">&quot;utf-8&quot;</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span>String url <span class="token operator">:</span> strings<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      Element loc <span class="token operator">=</span> locs<span class="token punctuation">.</span><span class="token function">addElement</span><span class="token punctuation">(</span><span class="token string">&quot;url&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      loc<span class="token punctuation">.</span><span class="token function">addElement</span><span class="token punctuation">(</span><span class="token string">&quot;loc&quot;</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>url<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      loc<span class="token punctuation">.</span><span class="token function">addElement</span><span class="token punctuation">(</span><span class="token string">&quot;lastmod&quot;</span><span class="token punctuation">)</span>
+          <span class="token punctuation">.</span><span class="token function">setText</span><span class="token punctuation">(</span>LocalDateTime<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>DateTimeFormatter<span class="token punctuation">.</span>ISO_LOCAL_DATE<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">writeAndFlush</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">writeAndFlush</span><span class="token punctuation">(</span>Document document<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">try</span> <span class="token punctuation">{</span>
+      OutputFormat format <span class="token operator">=</span> OutputFormat<span class="token punctuation">.</span><span class="token function">createPrettyPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      format<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getXMLEncoding</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      Writer fileWriter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span><span class="token string">&quot;sitemap.xml&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      XMLWriter xmlWriter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLWriter</span><span class="token punctuation">(</span>fileWriter<span class="token punctuation">,</span> format<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      xmlWriter<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      xmlWriter<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>err<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Не удалось экспортировать xml, проверьте writeandflush ()&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/**
+       * Формат XML и запись в файл
+   */</span>
+  <span class="token keyword">protected</span> <span class="token keyword">void</span> <span class="token function">writeFile4Pretty</span><span class="token punctuation">(</span>File file<span class="token punctuation">,</span> Document document<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+
+    OutputFormat format <span class="token operator">=</span> OutputFormat<span class="token punctuation">.</span><span class="token function">createPrettyPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    format<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getXMLEncoding</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    XMLWriter writer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLWriter</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">,</span> format<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writer<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writer<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writer<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">/***
+       * Формат XML как строка
+   */</span>
+  <span class="token keyword">protected</span> String <span class="token function">prettysString</span><span class="token punctuation">(</span>Document document<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException <span class="token punctuation">{</span>
+    OutputFormat format <span class="token operator">=</span> OutputFormat<span class="token punctuation">.</span><span class="token function">createPrettyPrint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    format<span class="token punctuation">.</span><span class="token function">setEncoding</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getXMLEncoding</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    StringWriter stringWriter <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringWriter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    XMLWriter writer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLWriter</span><span class="token punctuation">(</span>stringWriter<span class="token punctuation">,</span> format<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writer<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    writer<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> stringWriter<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+
+
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/suveng/demo/releases/tag/jsoupDemo" rel="nofollow,noindex" target="_blank">https://github.com/suveng/demo/releases/tag/jsoupDemo</a></p>
+<p>Получить ссылки на githubpages в реальном бою и создать карту сайта</p>
+</blockquote>
+<h2><a id="_514" target="_blank" rel="nofollow,noindex"></a>Справочная статья</h2>
+<p><a href="https://www.yiibai.com/jsoup" rel="nofollow,noindex" target="_blank">https://www.yiibai.com/jsoup</a></p>
+</div></div>
+<div id="contentbelowads" style="width:100%;text-align:center;padding-top:10px;">
+<iframe data-id="russianblogs.com_728x90_responsive_5_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='728x90|300x250',
+            adunit = 'russianblogs.com_728x90_responsive_5_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div style="clear:both;"></div>
+<hr>
+<h3><span>Интеллектуальная рекомендация</span></h3>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/12751625497/"><img style="width:172px;height:120px;" src="/thumbs/810/93f77f6a61a9131d1a4740adb3b5ac12.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/12751625497/" rel="bookmark" title="Порекомендуйте 3 веб-сайта с подборкой цветов в Интернете">Порекомендуйте 3 веб-сайта с подборкой цветов в Интернете</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Для веб-дизайнеров дизайн каждого веб-сайта требует набора наиболее подходящих цветовых схем. Выбор цветовых схем связан с успехом или неудачей всего веб-сайта. Вы с ума сошли из-за того, что вас бесп...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/63281518744/"><img style="width:172px;height:120px;" src="/thumbs/959/726849660daaaeb311be43b807063727.JPEG">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/63281518744/" rel="bookmark" title="Плагин вызова прогноза погоды">Плагин вызова прогноза погоды</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Плагин, предоставляемый Weather.com, имеет следующие характеристики: 1. Прогноз погоды на 5 дней в реальном времени для всех городов, округов и районов Китая и более чем 2500 крупных городов мира; &nb...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/46501489121/"><img style="width:172px;height:120px;" src="/thumbs/773/9fbfdb1f66e8916297c13dbc99eef45d.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/46501489121/" rel="bookmark" title="Публикация запросов на отправку данных в серверную часть, серверная часть отправляет файл клиентской части в двоичной форме, а клиентская часть получает и загружает его.">Публикация запросов на отправку данных в серверную часть, серверная часть отправляет файл клиентской части в двоичной форме, а клиентская часть получает и загружает его.</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Публикация запросов на отправку данных в серверную часть, серверная часть отправляет файл клиентской части в двоичной форме, а клиентская часть получает и загружает его. Используйте собственный метод ...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/10162299459/"><img style="width:172px;height:120px;" src="/thumbs/790/599a352c1aa3bbcc63aee367296b7eee.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/10162299459/" rel="bookmark" title="Глава принципиальной весной IOC">Глава принципиальной весной IOC</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">1, IOC контейнерная композиция логика и архитектура? 2, суетный процесс фасоли для фасоли? 1) Определите информацию о свойстве фасоли в файле XML 2) После запущенного программы Spring BubFactory загру...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/98291494896/"><img style="width:172px;height:120px;" src="/thumbs/533/25d1d401da60c87ec81a15780dd9dbfd.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/98291494896/" rel="bookmark" title="Установка и развертывание Nginx">Установка и развертывание Nginx</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">1. Установка Nginx 1. Скачать (1) Адрес загрузки: http://nginx.org/en/download.html 2. Схема установки (1) Запустите пакет распаковки nginx-1.8.0.zip под определенной буквой диска: структура каталогов...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="rightads2" style="width:100%;height:90px;margin-top:10px;margin-bottom:10px;" class="adsloading">
+<div id="82332-1"><script src="//ads.themoneytizer.com/s/gen.js?type=1"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=1"></script></div>
+</div>
+<h3><span>Вам также может понравиться</span></h3>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/4460251008/"><img style="width:172px;height:120px;" src="/thumbs/116/30627027e4a8c8b884dfb3c1a8b594dc.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/4460251008/" rel="bookmark" title="C # RichTextBox как простой редактор HTML-кода --------- Используйте WinApi для исправления ошибки номера строки, отображаемой слева">C # RichTextBox как простой редактор HTML-кода --------- Используйте WinApi для исправления ошибки номера строки, отображаемой слева</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">&nbsp; Примечание: вы можете точно откалибровать положение прокрутки через WinApi. &nbsp;...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/66972232997/" rel="bookmark" title="Tensorflow Обучение (1) Плоская посадка">Tensorflow Обучение (1) Плоская посадка</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Tensorflow Обучение Базовая плоскость Окончательный результат бега 0 [[-0.16648704 -0.10253859]] [1.3972642] 10 [[-0.23303 -0.12905736]] [0.656346] 20 [[-0.10527672 0.00807187]] [0.5127117] 30 [[-0.02...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/86011982016/"><img style="width:172px;height:120px;" src="/thumbs/108/9a17466e71dbace43f167164fc4ab0f4.JPEG">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/86011982016/" rel="bookmark" title="Китайский инженер Qualcomm убит в Соединенных Штатах или связанных с увольнениями">Китайский инженер Qualcomm убит в Соединенных Штатах или связанных с увольнениями</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Время в США в воскресенье, китайский инженер Дэвид У в американском телекоммуникационном оборудовании Гигантский Ци Кулон, прыгнул в здании компании и закончил свою жизнь на своем месте на 10 лет. Ест...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/69861144415/"><img style="width:172px;height:120px;" src="/thumbs/320/06fa596f926e2974146dfb01f7fd5758.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/69861144415/" rel="bookmark" title="Резюме четырех основных компонентов примечаний к исследованию Android">Резюме четырех основных компонентов примечаний к исследованию Android</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Резюме четырех основных компонентов примечаний к исследованию Android Четыре основных компонента Android - это Activity, Service, ContentProvider и BroadcastReceiver. Activity Обзор В Android активнос...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div>
+<div style="padding-top:6px;padding-bottom:6px;">
+<div class="loop-wrap clearfix">
+<div class="loop-thumb">
+<a href="/article/41182566625/"><img style="width:172px;height:120px;" src="/thumbs/171/adf1dd7f6f01d812593deaae726581ab.png">
+</a>
+</div>
+<header class="loop-data">
+<h3 style="margin-top:0px;border-bottom-style: none;padding-bottom: 0px;margin-bottom: 0px;overflow:hidden;line-height:30px;">
+<a href="/article/41182566625/" rel="bookmark" title="Jmeter встроенный метод использования функций Небольшая сводка">Jmeter встроенный метод использования функций Небольшая сводка</a>
+</h3>
+</header>
+<div class="mh-excerpt">
+<p style="line-height:25px;">Каталог статьи Преступность `__setproperty` и` __property` `__time` `__V` `__counter` Преступность Встроенная функция JMeter имеет очень мощную функцию, мы можем найти встроенное руководство по функци...</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="rightads3" style="width:100%;height:90px;margin-top:10px;margin-bottom:10px;" class="adsloading">
+<div id="82332-28"><script src="//ads.themoneytizer.com/s/gen.js?type=28"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=28"></script></div>
+</div>
+</div>
+<div class="columns large-4 large-offset-1 sidebar" style="position: -webkit-sticky;position: sticky;top: 0;">
+<div id="leftads0">
+<iframe data-id="russianblogs.com_300x250_responsive_3_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='300x250',
+            adunit = 'russianblogs.com_300x250_responsive_3_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">Статьи по теме</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/37742155294/" title="Java учебник с помощью JSoup для достижения простой технологии рептилии">Java учебник с помощью JSoup для достижения простой технологии рептилии</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/60553060/" title="java jsoup crawler">java jsoup crawler</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/2349266196/" title="Jsoup написать Java Crawler">Jsoup написать Java Crawler</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/4266500826/" title="Jsoup страницы разбора Java">Jsoup страницы разбора Java</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/31321052924/" title="Подробное использование Java Jsoup">Подробное использование Java Jsoup</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/42471256652/" title="Краулер (java + jsoup)">Краулер (java + jsoup)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/8582957292/" title="HttpClient4 + Jsoup реализует искатель Java">HttpClient4 + Jsoup реализует искатель Java</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/31431071073/" title="Инструмент разбора HTML Java Jsoup">Инструмент разбора HTML Java Jsoup</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/82122265031/" title="Java использует jsoup парсинг HTML">Java использует jsoup парсинг HTML</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/9467597777/" title="jsoup">jsoup</a></li>
+</ul>
+<div style="width:320px;height:250px;background-color: white;" id="leftads1" class="adsloading">
+<div id="82332-2"><script src="//ads.themoneytizer.com/s/gen.js?type=2"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=2"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">популярные статьи</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/59331963395/" title="PHP реализация неделя и месячный метод расчета времени начала">PHP реализация неделя и месячный метод расчета времени начала</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/918150699/" title="Обучение QT: Урок 1. Создание прототипа Quick UI QmlProject Project-QT">Обучение QT: Урок 1. Создание прототипа Quick UI QmlProject Project-QT</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/589593424/" title="Анализ реализации стека ядра сети Linux (6) - прикладной уровень для получения пакетов данных (I)">Анализ реализации стека ядра сети Linux (6) - прикладной уровень для получения пакетов данных (I)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/9087718012/" title="Сравнение трех популярных стеков кроссплатформенных технологий">Сравнение трех популярных стеков кроссплатформенных технологий</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/9335662399/" title="Практика для начинающих SpringBoot + Mybatis (1)">Практика для начинающих SpringBoot + Mybatis (1)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/30541908344/" title="Слишком много сил, я должен продолжать">Слишком много сил, я должен продолжать</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/7319404075/" title="Установка Elastic Search 6.5.1">Установка Elastic Search 6.5.1</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/2983697734/" title="Бумажные записки (1) -Тексы">Бумажные записки (1) -Тексы</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/53771853381/" title="JMeter- Beanshell Syntax и общий встроенный объект">JMeter- Beanshell Syntax и общий встроенный объект</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/336588369/" title="Использование laydate в установленном layui динамическом временном диапазоне, сброс временного диапазона (сброс динамического ограничения)">Использование laydate в установленном layui динамическом временном диапазоне, сброс временного диапазона (сброс динамического ограничения)</a></li>
+</ul>
+<div style="width:320px;height:615px;background-color: white;" id="leftads2" class="adsloading">
+<div id="82332-3"><script src="//ads.themoneytizer.com/s/gen.js?type=3"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=3"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">рекомендованная статья</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/55811679793/" title="Поездка к плотине ~~ Рисунок 5P">Поездка к плотине ~~ Рисунок 5P</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/50661661742/" title="【LeetCode】849. Maximize Distance to Closest Person">【LeetCode】849. Maximize Distance to Closest Person</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/4191903003/" title="цвет заливки matplotlib">цвет заливки matplotlib</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/8660194899/" title="Просмотрите выходные данные DataFrame и распечатайте ... эллипсы">Просмотрите выходные данные DataFrame и распечатайте ... эллипсы</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/36451489519/" title="Загрузите две таблицы на одной странице с помощью настраиваемого шаблона столбца">Загрузите две таблицы на одной странице с помощью настраиваемого шаблона столбца</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/22242343266/" title="Встречайте много условий Commonjs, Node.js, Window, Layui">Встречайте много условий Commonjs, Node.js, Window, Layui</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/9281384749/" title="Учебник MySQL (4)">Учебник MySQL (4)</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/8258891870/" title="Настройте nginx для запуска при загрузке под ubuntu">Настройте nginx для запуска при загрузке под ubuntu</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/81121341784/" title="HDVPSS DM8168 и видеовход и выход на оценочной плате">HDVPSS DM8168 и видеовход и выход на оценочной плате</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href="/article/1772280264/" title="Карта неба: с изображением тепловых карт">Карта неба: с изображением тепловых карт</a></li>
+</ul>
+<div style="width:320px;height:250px;background-color: white;" id="leftads3" class="adsloading">
+<div id="82332-19"><script src="//ads.themoneytizer.com/s/gen.js?type=19"></script><script src="//ads.themoneytizer.com/s/requestform.js?siteId=82332&formatId=19"></script></div>
+</div>
+<h3 class="page-title services" style="margin-top:0px;">Связанные теги</h3>
+<ul>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/java/' title='java'>java</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D1%80%D0%B5%D0%BF%D1%82%D0%B8%D0%BB%D0%B8%D1%8F/' title='рептилия'>рептилия</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%9F%D1%80%D0%BE%D0%B3%D0%BD%D0%BE%D0%B7+%D0%BF%D0%BE%D0%B3%D0%BE%D0%B4%D1%8B/' title='Прогноз погоды'>Прогноз погоды</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D1%80%D0%B0%D1%81%D1%88%D0%B8%D1%80%D1%8F%D1%82%D1%8C/' title='расширять'>расширять</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0+%D0%B8+%D1%80%D0%B0%D0%B7%D0%B2%D0%B5%D1%80%D1%82%D1%8B%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+Nginx/' title='Установка и развертывание Nginx'>Установка и развертывание Nginx</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%9A%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F+%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%BA%D0%B8+%D0%BD%D0%B0%D0%B3%D1%80%D1%83%D0%B7%D0%BA%D0%B8+Nginx/' title='Конфигурация балансировки нагрузки Nginx'>Конфигурация балансировки нагрузки Nginx</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%A1%D0%BE%D0%B2%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D0%BE%D0%B5+%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5+%D1%81%D0%B5%D0%B0%D0%BD%D1%81%D0%B0+Tomcat/' title='Совместное использование сеанса Tomcat'>Совместное использование сеанса Tomcat</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/RichTextBox/' title='RichTextBox'>RichTextBox</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%9D%D0%BE%D0%BC%D0%B5%D1%80+%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8/' title='Номер строки'>Номер строки</a></li>
+<li style="padding-top: 6px;padding-bottom: 6px;border-bottom:1px solid #EBEBEB;line-height:20px;"><a href='/tag/%D0%9F%D0%BE%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5+%D0%BF%D1%80%D0%BE%D0%BA%D1%80%D1%83%D1%82%D0%BA%D0%B8/' title='Положение прокрутки'>Положение прокрутки</a></li>
+</ul>
+<div id="leftads_bottom">
+<iframe data-id="russianblogs.com_300x600_responsive_4_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='300x600|300x250',
+            adunit = 'russianblogs.com_300x600_responsive_4_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="anchor_ads">
+<iframe data-id="russianblogs.com_970x90_sticky_anchorad_responsive_DFP" FRAMEBORDER="0" SCROLLING="no" MARGINHEIGHT="0" MARGINWIDTH="0" TOPMARGIN="0" LEFTMARGIN="0" width="1" height="1"></iframe>
+<script>
+    (function () {
+        var size='970x90|320x100',
+            adunit = 'russianblogs.com_970x90_sticky_anchorad_responsive_DFP',
+            childNetworkId = '22396446015',
+            xmlhttp = new XMLHttpRequest();xmlhttp.onreadystatechange = function(){if(xmlhttp.readyState==4 && xmlhttp.status==200){var es = document.querySelectorAll("[data-id='"+adunit+"']");var e = Array.from(es).filter(function(e) {return !e.hasAttribute("data-rendered")});if(e.length > 0){e.forEach(function(el){var iframe = el.contentWindow.document;iframe.open();iframe.write(xmlhttp.responseText);iframe.close();el.setAttribute('data-rendered', true)})}}};var child=childNetworkId.trim()?','+childNetworkId.trim():'';xmlhttp.open("GET", 'https://pubads.g.doubleclick.net/gampad/adx?iu=/147246189'+child+'/'+adunit+'&sz='+encodeURI(size)+'&t=Placement_type%3Dserving&'+Date.now(), true);xmlhttp.send();})();
+</script>
+</div>
+<div class="columns footer-meta">
+<div class="row">
+<div class="columns large-12 footer-meta-inner">
+<div class="row">
+<div class="columns large-12"> &copy; 2020-2022 All rights reserved by russianblogs.com</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/hljs_new.js" type="text/javascript"></script>
+<script src="/js/md.js" type="text/javascript"></script>
+<script>
+		if($('div.markdown_views pre.prettyprint code.hljs').length > 0 ){
+				$('div.markdown_views')[0].className = 'markdown_views';
+		}
+</script>
+<script src="/js/viewer.min.js"></script>
+<script>
+var viewer = new Viewer(document.getElementById('article_content'));
+</script>
+<script src="/js/bottom.js"></script>
+
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72909481, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72909481" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+</body>
+</html>
