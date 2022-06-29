@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="866ac4fe-290a-487a-b269-c19f2656eca0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../JavaEETest/src/DeleteCoociesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEETest/src/GetCookiesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../JavaEETest/src/SetCookiesServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Spring_start.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/legan/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/context.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaEETest/out/artifacts/JavaEETest_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaEETest/out/artifacts/JavaEETest_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaEETest/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../JavaEETest/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_java_project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../my_java_project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_java_project/src/main/java/_2_Чтение_из_файла_BufferedReader_Scanner_Files_FileReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/../my_java_project/src/main/java/_2_Чтение_из_файла_BufferedReader_Scanner_Files_FileReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_java_project/src/main/java/_3_HTTP_запрос.java" beforeDir="false" afterPath="$PROJECT_DIR$/../my_java_project/src/main/java/_3_HTTP_запрос.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../my_java_project/target/classes/_3_HTTP_запрос.class" beforeDir="false" afterPath="$PROJECT_DIR$/../my_java_project/target/classes/_3_HTTP_запрос.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="CodeIris Favorites" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="FxmlFile" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2BGSYq6NK4m4AeBWbrE3Oevqja9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\truno\OneDrive\Рабочий стол\папка\Java\Spring_start\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="legan.Main" />
+      <module name="Spring_start" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="legan.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="866ac4fe-290a-487a-b269-c19f2656eca0" name="Default Changelist" comment="" />
+      <created>1656530978979</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656530978979</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1656532316418">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532316418" />
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom" timestamp="1656532872569">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532872569" />
+    <state width="1876" height="282" key="GridCell.Tab.0.center" timestamp="1656532872569">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532872569" />
+    <state width="1876" height="282" key="GridCell.Tab.0.left" timestamp="1656532872569">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532872569" />
+    <state width="1876" height="282" key="GridCell.Tab.0.right" timestamp="1656532872569">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1876" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532872569" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1656532484680">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656532484680" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1656530983256">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1080@0.0.1920.1040" timestamp="1656530983256" />
+  </component>
+</project>

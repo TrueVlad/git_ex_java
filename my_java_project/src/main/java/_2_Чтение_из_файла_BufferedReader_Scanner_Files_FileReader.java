@@ -40,7 +40,7 @@ public class _2_Чтение_из_файла_BufferedReader_Scanner_Files_FileRe
             readUsingBufferedReader(filename);
 //            readUsingBufferedReaderJava7(filename,); // ?
 //            readUsingFileReader(filename);
-
+//            readUsingBufferedReader(filename, StandardCharsets.UTF_8);
 //            readUsingFiles(filename);
 //            readUsingScanner(filename);
 

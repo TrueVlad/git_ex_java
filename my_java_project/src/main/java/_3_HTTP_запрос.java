@@ -7,7 +7,7 @@ public class _3_HTTP_запрос {
     public static void main(String[] args) {
 
 ///////////////////////////////////////////////////////////////////простой get запрос стандартными сре-ми java
-    String query = "https://api.vk.com/method/users.get?user_id=210700286&v=5.52";
+    String query = "http://localhost:8080/task/";
 
     HttpURLConnection connection = null;
 
@@ -25,18 +25,18 @@ public class _3_HTTP_запрос {
 
         // читаем ответ
 
-        StringBuilder stringBuilder = new StringBuilder();                                // для преобразрования входящих строк
+        StringBuilder sb = new StringBuilder();                                // для преобразрования входящих строк
 
         if (HttpURLConnection.HTTP_OK == connection.getResponseCode() ){             // если ответ вернулся с кодом 200 (ок), читаем ответ
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));              // если кирилица, через запятую в параметре задаем кодировка "cp1251"
 
             String line;
             while ((line = in.readLine()) != null){
-                stringBuilder.append(line);
-                stringBuilder.append("/n");                                  // построчно читаем
+                sb.append(line);
+//                sb.append("//n");                                  // построчно читаем
             }
 
-            System.out.println(stringBuilder.toString());
+            System.out.println(sb.toString());
         } else {
             System.out.println("fail: " + connection.getResponseCode() + ", " + connection.getResponseMessage()); // в случае неудачи выдает параметры ответа
         }
