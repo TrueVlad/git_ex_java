@@ -1,0 +1,62 @@
+{
+  "result": {
+    "result": [
+      {
+        "__name": "Неверные данные в заявлении (03.06.2022)",
+        "__updatedBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "resolutionType": [
+          {
+            "code": "wrong_info_application",
+            "name": "Неверные данные в заявлении"
+          }
+        ],
+        "statementIP": [
+          "7b100068-3963-4bc2-8cee-55b86ff3edd6"
+        ],
+        "resolutionDate": "2022-06-03T00:00:00.000Z",
+        "__debug": false,
+        "__version": 1654237611,
+        "__createdAt": "2022-06-03T06:26:51Z",
+        "__subscribers": [
+          "2177001d-4b49-4d1a-b28c-282c7f7e6719"
+        ],
+        "__index": 2,
+        "__createdBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "__id": "4e0f86d7-33e9-4006-9f4b-019cf6dcdb5e",
+        "__file": [
+          "6c4534fc-1c84-4ab4-909a-04923268ada5"
+        ],
+        "initiationEnforcementProcedure": [
+          "0a7043c8-efb5-49b6-b909-188cb1f0d890"
+        ],
+        "__updatedAt": "2022-06-03T06:26:51Z"
+      },
+      {
+        "__name": "Постановление о возбуждении ИП (01.06.2022)",
+        "__updatedBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "resolutionType": [
+          {
+            "code": "decree_initiation_ip",
+            "name": "Постановление о возбуждении ИП"
+          }
+        ],
+        "statementIP": [
+          "563c57b7-4dc0-4d3b-b8eb-0e7456fd6096"
+        ],
+        "resolutionDate": "2022-06-01T00:00:00.000Z",
+        "__debug": false,
+        "__version": 1654094125,
+        "__createdAt": "2022-06-01T14:35:25Z",
+        "__subscribers": [
+          "2177001d-4b49-4d1a-b28c-282c7f7e6719"
+        ],
+        "__index": 1,
+        "__createdBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "__id": "408512e9-d01c-40ec-ac36-8e56b69c3b6d",
+        "__file": [
+          "b419688c-43b6-43ad-b933-3176b8021549"
+        ],
+        "initiationEnforcementProcedure": [
+          "5cc8847e-3f2e-4761-86b4-ff747f1fe813"
+        ],
+        "__up

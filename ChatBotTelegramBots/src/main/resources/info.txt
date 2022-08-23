@@ -1,0 +1,4 @@
+ExampleOfAnonymizerBotTrue
+ExampleOfAnonymizerBotTrueBot
+
+5567513270:AAHuYPVInO8xdAVHfYU7LwrmKb7Hf-DBji4    - token

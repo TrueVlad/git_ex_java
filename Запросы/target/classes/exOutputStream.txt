@@ -1,0 +1,18 @@
+{
+  "item": {
+    "__name": " 1",
+    "__version": 1657711151,
+    "__createdAt": "2022-07-13T11:19:11Z",
+    "__subscribers": [
+      "1fc1f923-0dd6-4038-8a2d-a9fb5365c0be"
+    ],
+    "__updatedBy": "1fc1f923-0dd6-4038-8a2d-a9fb5365c0be",
+    "__index": 1,
+    "__createdBy": "1fc1f923-0dd6-4038-8a2d-a9fb5365c0be",
+    "__id": "bfdbbe34-01e2-47c6-935d-c9819844cb27",
+    "__updatedAt": "2022-07-13T11:19:11Z",
+    "__debug": false
+  },
+  "success": true,
+  "error": ""
+}

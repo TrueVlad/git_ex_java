@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd ">
+
+
+
+    <!-- если используем конструктор для внедрения -->
+<!--    <bean id="musicBean"-->
+<!--          class="ClassicMusic">  -->
+<!--    </bean>-->
+
+<!--    <bean id = "musicPlayer"-->
+<!--          class="MusicPlayer">-->
+<!--        <constructor-arg ref="musicBean" />-->
+<!--    </bean>-->
+
+    <!-- если используем сеттер для внедрения      нужен пустой конструктор-->
+
+<!--        <bean id="musicBean"-->
+<!--              class="ClassicMusic">-->
+<!--        </bean>-->
+
+<!--        <bean id = "musicPlayer"-->
+<!--              class="MusicPlayer">-->
+<!--            <property name="music" ref="musicBean"/>-->
+
+<!--            <property name="name" value="Some name"/>-->
+<!--            <property name="volume" value="50"/>-->
+<!--        </bean>-->
+
+    <!-- если используем файл для внедрения-->
+    <context:property-placeholder location="classpath:musicPlayer.properties"/>
+
+    <bean id="musicBean"
+          class="org.spring.fileXml.ClassicMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicMusic">
+    </bean>
+
+    <bean id = "musicPlayer"
+          class="org.spring.fileXml.MusicPlayer"
+          scope="prototype">
+        <property name="music" ref="musicBean"/>
+
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
+
+        <property name="array" value="${musicPlayer.array}"/>
+    </bean>
+
+</beans>

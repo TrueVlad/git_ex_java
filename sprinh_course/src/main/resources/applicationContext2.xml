@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd ">
+
+
+    <context:property-placeholder
+            location="classpath:myApp.properties"/>      <!-- Если поля объекта заполняются не сеттерами, а через конфиг файл (myApp.properties)  -->
+
+
+    <bean id="myPet"
+          class="com.trunov.spring.Dog">
+    </bean>
+
+
+    <bean id="myPerson"
+          class="com.trunov.spring.Person">
+        <!--        <constructor-arg ref="myPet"/>            &lt;!&ndash; ЕСЛИ БЕЗ СЕТТЕРА ДЛЯ КОНСТРУКТОРА С ПАРАМЕТРОМ   &ndash;&gt;-->
+        <property name="pet" ref="myPet"/>              <!-- Если сеттерами заполнять поля объекта и поля объекта жестко задачать тут -->
+
+        <!--        <property name="surname" value="Trunov"/>       &lt;!&ndash; Если сеттерами заполнять поля объекта и поля объекта жестко прописаны тут &ndash;&gt;-->
+        <!--        <property name="age" value="33"/>               &lt;!&ndash; Если сеттерами заполнять поля объекта и поля объекта жестко прописаны тут &ndash;&gt;-->
+
+        <property name="surname" value="${person.surname}"/>       <!-- Если заполнять поля объекта с помощью конфиг файл (myApp.properties)  -->
+        <property name="age" value="${person.age}"/>               <!-- Если заполнять поля объекта с помощью конфиг файл (myApp.properties)  -->
+
+
+    </bean>
+
+
+</beans>
