@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+</head>
+
+<!--без thymeleaf и первым методом post-->
+
+<body>
+
+<form method="POST" action="/people">                     <!--указываем, какой контроллер запустить-->
+
+    <label for="name">Name</label>
+    <input name="name" type="text" id="name"/>
+
+    <br>
+
+    <label for="surname">Surname</label>
+    <input name="surname" type="text" id="surname"/>
+
+    <br>
+
+    <label for="email">Email</label>
+    <input name="email" type="text" id="email"/>
+
+    <br>
+
+    <input type="submit" value="Add Person"/>
+
+
+</form>
+
+<br/>
+
+
+
+<!--с thymeleaf и вторым методом POST-->
+
+<form th:method="POST" th:action="@{/people}" th:object="${person}">                         <!--указываем, какой контроллер запустить-->
+    <label for="name" >Name for "create2" method with thymeleaf </label>
+    <input type="text" th:field="*{name}" id="name2" />
+    <br/>
+    <input type="submit" value="Create!" />
+
+
+
+
+
+
+
+
+<!--<form method="POST" action="/people/create2">                         &lt;!&ndash;указываем, какой контроллер запустить&ndash;&gt;-->
+
+<!--    <label for="name">Name</label>-->
+<!--    <input name="name" type="text" id="name2"/>-->
+
+<!--    <br>-->
+
+<!--    <label for="surname">Surname</label>-->
+<!--    <input surname="surname" type="text" id="surname2"/>-->
+
+<!--    <br>-->
+
+<!--    <label for="email">Email</label>-->
+<!--    <input email="email" type="text" id="email2"/>-->
+
+<!--    <br>-->
+
+<!--    <input type="submit" value="Add Person"/>-->
+
+
+</form>
+
+
+</body>
+
+
+</html>
