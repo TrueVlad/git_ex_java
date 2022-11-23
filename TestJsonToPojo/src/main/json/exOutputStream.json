@@ -1,0 +1,24 @@
+{
+  "result": {
+    "result": [
+      {
+        "__name": "Имя первое",
+        "__updatedBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "__debug": false,
+        "atribut": "asd",
+        "__version": 1663673013,
+        "__createdAt": "2022-09-20T11:01:10Z",
+        "__subscribers": [
+          "2177001d-4b49-4d1a-b28c-282c7f7e6719"
+        ],
+        "__index": 1,
+        "__createdBy": "2177001d-4b49-4d1a-b28c-282c7f7e6719",
+        "__id": "8366223d-0034-46a9-b709-e30d340ef50f",
+        "__updatedAt": "2022-09-20T11:23:33Z"
+      }
+    ],
+    "total": 1
+  },
+  "success": true,
+  "error": ""
+}
